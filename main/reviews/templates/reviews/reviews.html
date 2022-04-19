@@ -1,0 +1,67 @@
+{% load static %}
+{% include 'good/main.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reviews</title>
+</head>
+<body>
+<br/>
+<center>
+<table align="center">
+ <h2 class="card-title">Student Performance Reviews</h2>
+    <tr>
+        <th>Name</th>
+        <th>Perfomance</th>
+        <th></th>
+    </tr>
+
+    {% for user in tap %}
+        <tr>
+            <td>{{user.Name}}</td>
+            <td>{{user.Performance}}</td>
+           <td><a href="{% url 'deletereview' user.pk %}">Delete</a></td>
+        </tr>
+        {% endfor %}
+</table>
+    <a href="{% url 'home' %}"><button type="button" class="btn btn-dark">Home</button></a>
+</center>
+<br>
+<style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        color: #343a40;
+        justify-content: center;
+      }
+
+      th, td {
+        /* border: 1px solid #343a40; */
+        padding: 16px 24px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #474747;
+        color: #fff;
+        width: 25%;
+      }
+
+      tbody tr:nth-child(odd){
+        background-color: #f8f9fa;
+      }
+
+
+      tbody tr:nth-child(even){
+        background-color: #e9ecef;
+      }
+</style>
+</body>
+</html>

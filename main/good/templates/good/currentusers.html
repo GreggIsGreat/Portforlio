@@ -1,0 +1,30 @@
+{% load static %}
+{% include 'good/main.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Current users</title>
+
+</head>
+<br>
+<div class="container p-3 my-3 bg-white text-black">
+
+<body>
+    {% for inter in info %}
+    <h1><strong>User:</strong>{{inter.Name}}</h1>
+        <ul>
+            <hr>
+            <p><strong>Name:</strong>{{inter.Name}}</p>
+            <p><strong>Email:</strong>{{inter.Email}}</p>
+            <p><strong>Physical Address:</strong>{{inter.Physical_Address}}</p>
+            <p><strong>Gender:</strong>{{inter.Gender}}</p>
+            <p><strong>Postal Address:</strong>{{inter.Postal_Address}}</p>
+            <p><strong>Name of Parent:</strong>{{inter.Name_of_Parent}}</p>
+            <p><strong>Description:</strong>{{inter.Description}}</p>
+        </ul>
+    {% endfor %}
+</body>
+</div>
+
+</html>

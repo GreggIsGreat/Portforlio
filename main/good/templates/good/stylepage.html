@@ -1,0 +1,46 @@
+{% load static %}
+{% include 'good/main.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StylePage</title>
+</head>
+<body>
+<div class="container p-3 my-3 bg-white text-black">
+    <details>
+        <summary>About Cars</summary>
+        <p>
+            Engines have pistons that move up and down inside metal tubes
+            called cylinders. Imagine riding a bicycle: Your legs move
+            up and down to turn the pedals. Pistons are connected via rods
+            (they're like your shins) to a crankshaft, and they move up and
+            down to spin the engine's crankshaft, the same way your legs
+            spin the bike's—which in turn powers the bike's drive wheel
+            or car's drive wheels. Depending on the vehicle, there are
+            typically between two and 12 cylinders in its engine,
+            with a piston moving up and down in each.
+        </p>
+    </details>
+        <progress></progress>
+        <input id="color_picker" type="color" onchange="showHex();"> <span id="color_hex_value"></span>
+        <h1>Thabang</h1>
+</div>
+    <style>
+        progress {
+                width: 100%;
+                }
+        body{
+        font-family: "bookman old style";
+            }
+    </style>
+        <script>
+            function showHex(){
+              var hex =  document.querySelector("#color_hex_value"),
+                  h1 = document.querySelector("h1");
+
+              h1.style.color = document.querySelector("#color_picker").value;
+            }
+        </script>
+</body>
+</html>

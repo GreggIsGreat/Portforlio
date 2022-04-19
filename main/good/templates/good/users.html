@@ -1,0 +1,28 @@
+{% load static %}
+{% include 'good/main.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+<table align="center">
+ <h2 class="card-title">Students In System</h2>
+    <tr>
+        <th>Name</th>
+        <th></th>
+    </tr>
+
+    {% for user in info %}
+        <tr>
+            <td><a href="{% url 'currentusers' user.pk %}">{{user.Name}}</a></td>
+            <td><a href="{% url 'updatepage' user.pk %}">Update</a></td>
+
+        </tr>
+        {% endfor %}
+</table>
+</center>
+</body>
+</html>
